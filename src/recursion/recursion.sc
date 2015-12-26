@@ -38,15 +38,11 @@ tail_recursion_factorial.factorial(4)
 //factorials
 
 object functioning_tail_recursion_factorial {
-  def factorial (x: Int): Int = {
-
-    def loop (x: Int, y: Int): Int =
-      return x * y
-
-    if (x == 0) x else loop(x, x-1)
-
+  def factorial (n: Int): Int = {
+    def loop (acc: Int, n: Int): Int =
+      if (n == 0) acc else loop(acc * n, n - 1)
+    loop(1, n)
   }
-
 }
 
 functioning_tail_recursion_factorial.factorial(5)
