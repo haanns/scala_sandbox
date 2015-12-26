@@ -35,5 +35,6 @@ object shadow_testing {
     val x = f(3)
     x * x
   }
+
 }
 

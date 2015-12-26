@@ -24,3 +24,29 @@ object factorial_works {
 }
 
 factorial_works.factorial(4)
+
+//my attempt of using tail recursive version of factorials
+//not correct, need to find a different way of doing this
+object tail_recursion_factorial {
+  def factorial (x: Int): Int =
+    if (x == 0) return x else return x * (x - 1);
+}
+
+tail_recursion_factorial.factorial(4)
+
+//correct attempt of using tail recursion to calculate
+//factorials
+
+object functioning_tail_recursion_factorial {
+  def factorial (x: Int): Int = {
+
+    def loop (x: Int, y: Int): Int =
+      return x * y
+
+    if (x == 0) x else loop(x, x-1)
+
+  }
+
+}
+
+functioning_tail_recursion_factorial.factorial(5)
