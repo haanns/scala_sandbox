@@ -1,4 +1,6 @@
-object higher_order_functions {
+
+//my attempt at higher order functions
+object higher_order_functions_testing {
 
   //sum of all integers between a and b
   def sumInts(a: Int, b: Int): Int =
@@ -18,6 +20,23 @@ object higher_order_functions {
     if (a > b) 0 else factorial_of_num(a) + sumFactorials(a + 1, b)
 }
 
-higher_order_functions.sumInts(3, 7)
+//testing out my functions
+higher_order_functions_testing.sumInts(3, 7)
+higher_order_functions_testing.cubeInts(3, 5)
 
-higher_order_functions.cubeInts(3, 5)
+//instructor's way of doing it below
+object higher_order_functions_actual {
+
+  //this is essentially an F(x) function
+  def sum (f: Int => Int, a: Int, b: Int): Int =
+    if (a > b) 0 else f(a) + sum(f, a + 1, b)
+
+  //defining my F(x) functions
+  def sumInts (a: Int, b: Int) = sum(id, a , b)
+  def sumCubes (a: Int, b: Int) = sum(cube, a, b)
+  def sumFactorials(a: Int, b: Int) = sum(fact, a, b)
+
+  def id (x: Int): Int = x
+  def cube (x: Int): Int = x * x * x
+  def fact (x: Int): Int = if (x == 0) 1 else fact(x - 1)
+}
