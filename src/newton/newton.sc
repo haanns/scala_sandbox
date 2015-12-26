@@ -1,4 +1,4 @@
-
+//week one
 //newton method
 object newton {
 
