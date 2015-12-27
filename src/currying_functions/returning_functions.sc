@@ -39,6 +39,11 @@ object exercise {
   //factorial USING products
   def factorial_using_products (n: Int): Int =
     product(x => x)(1, n)
+
+  //woah now let's try out mapReduce! i should get it
+  def mapReduce (f: Int => Int, combine: (Int, Int) => Int, zero: Int) (a: Int, b: Int): Int =
+    if (a > b) zero
+    else combine(f(a), mapReduce(f, combine, zero) (a + 1, b))
 }
 
 //now let's test this
