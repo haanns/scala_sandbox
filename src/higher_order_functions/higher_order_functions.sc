@@ -1,7 +1,6 @@
 
 //my attempt at higher order functions
 object higher_order_functions_testing {
-
   //sum of all integers between a and b
   def sumInts(a: Int, b: Int): Int =
     if (a > b) 0 else a + sumInts(a + 1, b)
@@ -23,10 +22,8 @@ object higher_order_functions_testing {
 //testing out my functions
 higher_order_functions_testing.sumInts(3, 7)
 higher_order_functions_testing.cubeInts(3, 5)
-
 //instructor's way of doing it below without anon functions
 object higher_order_functions_actual {
-
   //this is essentially an F(x) function
   def sum (f: Int => Int, a: Int, b: Int): Int =
     if (a > b) 0 else f(a) + sum(f, a + 1, b)
@@ -43,7 +40,6 @@ object higher_order_functions_actual {
 
 //instructor's way of doing it with anon functions
 object higher_order_functions_with_anon {
-
   //overall F(x) function
   def sum (f: Int => Int, a: Int, b: Int): Int =
     if (a > b) 0 else f(a) + sum(f, a+1, b)
@@ -58,12 +54,12 @@ object higher_order_functions_with_anon {
 
 //exercise to make sure I understanding everything correctly
 object higher_order_functions_exercise{
-
   //using tail recursion
   def sum (f: Int => Int, a: Int, b: Int): Int = {
     def loop (a: Int, acc: Int): Int = {
       if (a > b) acc
       else loop(a + 1, f(a) + acc)
+      //else acc + loop(a+1, b)
     }
     loop(a, 0)
   }
