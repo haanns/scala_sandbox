@@ -51,3 +51,4 @@ exercise.product(x => x * x)(3, 7)
 //jesus that was so easy
 exercise.factorial_using_products(5)
 
+
