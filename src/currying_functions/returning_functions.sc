@@ -17,7 +17,6 @@ object return_function {
 return_function.sumInt(5, 7)
 return_function.sumCubes(4, 6)
 return_function.sum(x => x * x * x)(1, 5)
-
 //even more simplified
 object return_function_equiv {
   def sum(f: Int => Int) (a: Int, b: Int): Int =
@@ -27,7 +26,6 @@ object return_function_equiv {
 //write a product function that calculates the product of the values
 //of a function for the points on a given interval.
 object exercise {
-
   //first, let's try out products
   def product (f: Int => Int)(a: Int, b: Int): Int =
     if (a > b) 1 else f(a) * product(f)(a + 1, b)
@@ -50,5 +48,4 @@ object exercise {
 exercise.product(x => x * x)(3, 7)
 //jesus that was so easy
 exercise.factorial_using_products(5)
-
 
