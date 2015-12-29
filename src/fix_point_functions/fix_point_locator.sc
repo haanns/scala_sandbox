@@ -17,6 +17,12 @@ object initial_implementation {
   def sqrt (x: Double) =
     fixedPoint(y => (y + x / y)/2)(1)
 
+  //In this example, you call averageDamp with a function.
+  // So it returns a function that takes an Int and returns
+  // a value. You pass this function to fixedPoint and it also
+  // returns a function that takes an Int and returns a value.
+  // Finally you call this new function you got back from
+  // fixedPoint passing the argument 1, and you get a value back.
   def averageDamp(f: Double => Double) (x: Double) =
     (x + f(x)) /2
 
