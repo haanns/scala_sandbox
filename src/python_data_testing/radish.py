@@ -46,3 +46,18 @@ def count_radish_total():
 
 print count_radish_total()
 pprint(count_radish_total())
+
+def warning():
+  file = open('radishsurvey.txt')
+  count = 0
+  empty_list = []
+  for line in file:
+    line = line.strip().split(" - ")
+    name, item = line
+    name_strip = name.strip().lower().replace("  "," ")
+    if name_strip not in empty_list:
+      empty_list.append(name_strip)
+    else:
+      print("warning!")
+
+warning()
